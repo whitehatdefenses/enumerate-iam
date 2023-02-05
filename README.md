@@ -31,7 +31,7 @@ calls are performed).
 ## Installation
 
 ```
-git clone git@github.com:whitehatdefenses/enumerate-iam.git
+git clone https://github.com/whitehatdefenses/enumerate-iam.git
 cd enumerate-iam/
 pip install -r requirements.txt
 ```
