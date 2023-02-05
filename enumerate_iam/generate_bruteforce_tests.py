@@ -38,6 +38,25 @@ BLACKLIST_OPERATIONS = {
     'list_platform_versions',
 }
 
+# https://bishopfox.com/blog/privilege-escalation-in-aws
+# https://github.com/BishopFox/iam-vulnerable
+# https://github.com/RhinoSecurityLabs/AWS-IAM-Privilege-Escalation
+# https://hackingthe.cloud/aws/exploitation/iam_privilege_escalation/
+WHITELIST_SERVICES = {
+    'ec2',
+    'codestar',
+    'cloudformation',
+    'datapipeline',
+    'dynamodb',
+    'glue',
+    'iam',
+    'lambda',
+    'rds',
+    's3',
+    'sagemaker',
+    'ssm',
+    'sts',
+}
 
 def extract_service_name(filename, api_json):
     try:
@@ -112,6 +131,9 @@ def main():
 
         if service_name is None:
             print('%s does not define a service name' % filename)
+            continue
+            
+        if not service_name in WHITELIST_SERVICES:
             continue
 
         operations = extract_operations(api_json)
