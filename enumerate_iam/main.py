@@ -24,7 +24,7 @@ import botocore
 import random
 
 from botocore.client import Config
-from botocore.endpoint import MAX_POOL_CONNECTIONS
+#from botocore.endpoint import MAX_POOL_CONNECTIONS
 from multiprocessing.dummy import Pool as ThreadPool
 
 from enumerate_iam.utils.remove_metadata import remove_metadata
