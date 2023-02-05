@@ -43,11 +43,12 @@ BLACKLIST_OPERATIONS = {
 # https://github.com/RhinoSecurityLabs/AWS-IAM-Privilege-Escalation
 # https://hackingthe.cloud/aws/exploitation/iam_privilege_escalation/
 WHITELIST_SERVICES = {
-    'ec2',
-    'codestar',
     'cloudformation',
+    'codestar',
     'datapipeline',
     'dynamodb',
+    'ec2',
+    'ecs',
     'glue',
     'iam',
     'lambda',
